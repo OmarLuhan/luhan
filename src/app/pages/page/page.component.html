@@ -1,0 +1,116 @@
+<div class="min-h-screen bg-background">
+  <header
+    class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+  >
+    <div class="container flex h-14 items-center">
+      <div class="mr-4 hidden md:flex">
+        <a class="mr-6 flex items-center space-x-2" href="/">
+          <span class="hidden font-bold sm:inline-block">Luhan.dev</span>
+        </a>
+        <nav class="flex items-center space-x-6 text-sm font-medium">
+          <a href="#about" class="transition-colors hover:text-foreground/80">
+            About
+          </a>
+          <a
+            href="#projects"
+            class="transition-colors hover:text-foreground/80"
+          >
+            Projects
+          </a>
+          <a href="#contact" class="transition-colors hover:text-foreground/80">
+            Contact
+          </a>
+        </nav>
+      </div>
+      <Button variant="outline" class="ml-auto"> Resume </Button>
+    </div>
+  </header>
+  <main class="container px-4 md:px-6">
+    <section id="about" class="py-12 md:py-24 lg:py-32">
+      <div class="container px-4 md:px-6">
+        <div
+          class="flex flex-col items-center justify-center space-y-4 text-center"
+        >
+          <div class="space-y-2">
+            <h1
+              class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
+            >
+              Full Stack Developer
+            </h1>
+            <p
+              class="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
+            >
+              Building digital experiences with modern technologies. Focused on
+              creating elegant solutions to complex problems.
+            </p>
+          </div>
+          <div class="space-x-4">
+            <a
+              href="https://github.com"
+              target="_blank"
+              class="inline-flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700"
+            >
+              <lucide-icon [img]="github" class="h-4 w-4"></lucide-icon>
+              <span class="sr-only">GitHub</span>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              class="inline-flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700"
+            >
+              <lucide-icon [img]="linkedin" class="h-4 w-4"></lucide-icon>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              class="inline-flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700"
+            >
+              <lucide-icon [img]="twitter" class="h-4 w-4"></lucide-icon>
+              <span class="sr-only">Twitter</span>
+            </a>
+            <a
+              href="mailto:hello@example.com"
+              class="inline-flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700"
+            >
+              <lucide-icon [img]="mail" class="h-4 w-4"></lucide-icon>
+              <span class="sr-only">Email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="py-12 md:py-24 lg:py-32">
+      <div class="container px-4 md:px-6">
+        <h2
+          class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center"
+        >
+          Projects
+        </h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <app-project-card [props]="props[0]"></app-project-card>
+          <app-project-card [props]="props[1]"></app-project-card>
+          <app-project-card [props]="props[2]"></app-project-card>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t">
+    <div
+      class="container flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6"
+    >
+      <p class="text-xs text-gray-500 dark:text-gray-400">
+        © 2025 Luhan.dev. All rights reserved.
+      </p>
+      <nav class="sm:ml-auto flex gap-4 sm:gap-6">
+        <a class="text-xs hover:underline underline-offset-4" href="#">
+          Terms of Service
+        </a>
+        <a class="text-xs hover:underline underline-offset-4" href="#">
+          Privacy
+        </a>
+      </nav>
+    </div>
+  </footer>
+</div>
