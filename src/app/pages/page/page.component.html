@@ -1,4 +1,4 @@
-<div class="min-h-screen bg-background">
+<div class="min-h-screen">
   <header
     class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
   >
@@ -22,7 +22,11 @@
           </a>
         </nav>
       </div>
-      <Button variant="outline" class="ml-auto"> Resume </Button>
+      <Button
+        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors border border-input bg-background hover:bg-accent hover:text-foreground h-10 px-4 py-2 ml-auto"
+      >
+        Resume
+      </Button>
     </div>
   </header>
   <main class="container px-4 md:px-6">
@@ -35,20 +39,18 @@
             <h1
               class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
             >
-              Full Stack Developer
+              Software Engineer
             </h1>
-            <p
-              class="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
-            >
+            <p class="mx-auto max-w-[700px] text-gray-500 md:text-xl">
               Building digital experiences with modern technologies. Focused on
               creating elegant solutions to complex problems.
             </p>
           </div>
-          <div class="space-x-4">
+          <div class="space-x-4 text-gray-100">
             <a
               href="https://github.com"
               target="_blank"
-              class="inline-flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700"
+              class="inline-flex items-center justify-center h-10 w-10 border border-input rounded-md hover:bg-accent"
             >
               <lucide-icon [img]="github" class="h-4 w-4"></lucide-icon>
               <span class="sr-only">GitHub</span>
@@ -56,7 +58,7 @@
             <a
               href="https://linkedin.com"
               target="_blank"
-              class="inline-flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700"
+              class="inline-flex items-center justify-center h-10 w-10 border border-input rounded-md hover:bg-accent"
             >
               <lucide-icon [img]="linkedin" class="h-4 w-4"></lucide-icon>
               <span class="sr-only">LinkedIn</span>
@@ -64,14 +66,14 @@
             <a
               href="https://twitter.com"
               target="_blank"
-              class="inline-flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700"
+              class="inline-flex items-center justify-center h-10 w-10 border border-input rounded-md hover:bg-accent"
             >
               <lucide-icon [img]="twitter" class="h-4 w-4"></lucide-icon>
               <span class="sr-only">Twitter</span>
             </a>
             <a
               href="mailto:hello@example.com"
-              class="inline-flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700"
+              class="inline-flex items-center justify-center h-10 w-10 border border-input rounded-md hover:bg-accent"
             >
               <lucide-icon [img]="mail" class="h-4 w-4"></lucide-icon>
               <span class="sr-only">Email</span>
