@@ -34,7 +34,7 @@ jobs:
       run: bun install
 
     - name: Install Angular CLI
-      run: bunx --bun @angular/cli@${{ env.NG_VERSION }} install -g @angular/cli
+      run: bun add -g @angular/cli@${{ env.NG_VERSION }}
 
     - name: Run lint
       run: bunx ng lint
