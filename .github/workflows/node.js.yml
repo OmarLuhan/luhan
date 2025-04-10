@@ -2,23 +2,23 @@ name: Angular 19 CI/CD with Bun
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 env:
-  NODE_VERSION: 20.13.1  # Versión LTS recomendada para Angular 19
-  NG_VERSION: 19         # Versión de Angular
-  BUN_VERSION: 1.2.9     # Versión de Bun
+  NODE_VERSION: 20.13.1
+  NG_VERSION: 19
+  BUN_VERSION: 1.1.8
 
 jobs:
   build-and-test:
-    name: Build
+    name: Build and Test
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -33,7 +33,7 @@ jobs:
     - name: Install dependencies with Bun
       run: bun install
 
-    - name: Install Angular CLI
+    - name: Install Angular CLI globally
       run: bun add -g @angular/cli@${{ env.NG_VERSION }}
 
     - name: Build application
@@ -49,13 +49,16 @@ jobs:
     name: Deploy to GitHub Pages
     needs: build-and-test
     runs-on: ubuntu-latest
-    
-    # Solo ejecutar en pushes a main (no en PRs)
-    if: github.ref == 'refs/heads/main'
-    
+    permissions:
+      contents: write  
+      pages: write     
+      id-token: write  
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Download build artifacts
       uses: actions/download-artifact@v4
@@ -63,8 +66,13 @@ jobs:
         name: dist
         path: dist/
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist/luhan # Reemplaza con el nombre de tu app
+        path: 'dist/luhan
+
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4
