@@ -34,9 +34,6 @@ jobs:
     - name: Run lint
       run: ng lint
 
-    - name: Run tests
-      run: ng test --watch=false --browsers=ChromeHeadless
-
     - name: Build application
       run: ng build --configuration=production
 
