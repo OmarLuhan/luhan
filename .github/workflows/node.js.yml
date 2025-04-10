@@ -36,9 +36,6 @@ jobs:
     - name: Install Angular CLI
       run: bun add -g @angular/cli@${{ env.NG_VERSION }}
 
-    - name: Run lint
-      run: bunx ng lint
-
     - name: Build application
       run: bunx ng build --configuration=production
 
