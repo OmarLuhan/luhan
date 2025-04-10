@@ -3,40 +3,15 @@
 /* ------------------ TOKENS BASE ------------------ */
 @theme {
   --color-background: rgb(10, 10, 10);
+  --color-muted: rgb(30, 30, 30);
   --color-foreground: rgb(100% 100% 100%);
-  --color-card: rgb(0 0% 3.9%);
+  --color-card: rgb(10, 10, 10);
   --color-card-foreground: rgb(100% 100% 100%);
   --color-muted-foreground: rgb(70% 70% 70%);
-  --color-popover: rgb(0 0% 3.9%);
-  --color-popover-foreground: rgb(0 0% 98%);
-  --color-primary: rgb(0 0% 98%);
-  --color-primary-foreground: rgb(0 0% 9%);
-  --color-secondary: rgb(0 0% 14.9%);
-  --color-secondary-foreground: rgb(0 0% 98%);
-  --color-muted: rgb(0 0% 14.9%);
   --color-accent: rgb(15% 15% 15%);
-  --color-accent-foreground: rgb(0 0% 98%);
-  --color-destructive: rgb(0 62.8% 30.6%);
-  --color-destructive-foreground: rgb(0 0% 98%);
   --color-border: rgb(40, 40, 40);
   --color-input: rgb(40, 40, 40);
-  --color-ring: rgb(0 0% 83.1%);
-  --color-chart-1: rgb(220 70% 50%);
-  --color-chart-2: rgb(160 60% 45%);
-  --color-chart-3: rgb(30 80% 55%);
-  --color-chart-4: rgb(280 65% 60%);
-  --color-chart-5: rgb(340 75% 55%);
-  --radius-radius: 0.5rem;
-  --color-sidebar-background: rgb(240 5.9% 10%);
-  --color-sidebar-foreground: rgb(240 4.8% 95.9%);
-  --color-sidebar-primary: rgb(224.3 76.3% 48%);
-  --color-sidebar-primary-foreground: rgb(0 0% 100%);
-  --color-sidebar-accent: rgb(240 3.7% 15.9%);
-  --color-sidebar-accent-foreground: rgb(240 4.8% 95.9%);
-  --color-sidebar-border: rgb(240 3.7% 15.9%);
-  --color-sidebar-ring: rgb(217.2 91.2% 59.8%);
 }
-
 /* ------------------ PERSONALIZACIONES ------------------ */
 body {
   font-family: Arial, Helvetica, sans-serif;

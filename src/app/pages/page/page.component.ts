@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
+import { TechStackComponent } from '../../components/tech-stack/tech-stack.component';
+import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
 import {
   LucideAngularModule,
   Github,
@@ -10,7 +12,12 @@ import {
 import { ProjectCardProps } from '../../models/ProjectCardProps';
 @Component({
   selector: 'app-page',
-  imports: [LucideAngularModule, ProjectCardComponent],
+  imports: [
+    LucideAngularModule,
+    ProjectCardComponent,
+    TechStackComponent,
+    ContactFormComponent,
+  ],
   templateUrl: './page.component.html',
 })
 export class PageComponent {
