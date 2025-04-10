@@ -1,4 +1,4 @@
-name: Angular 19 CI/CD
+name: Angular 19 CI/CD with Bun
 
 on:
   push:
@@ -8,11 +8,12 @@ on:
 
 env:
   NODE_VERSION: 20.13.1  # Versión LTS recomendada para Angular 19
-  NG_VERSION: 19  # Versión de Angular
+  NG_VERSION: 19         # Versión de Angular
+  BUN_VERSION: 1.2.9     # Versión de Bun
 
 jobs:
   build-and-test:
-    name: Build and Test
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -23,19 +24,23 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
 
-    - name: Install dependencies
-      run: npm ci
+    - name: Install Bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: ${{ env.BUN_VERSION }}
+
+    - name: Install dependencies with Bun
+      run: bun install
 
     - name: Install Angular CLI
-      run: npm install -g @angular/cli@${{ env.NG_VERSION }}
+      run: bunx --bun @angular/cli@${{ env.NG_VERSION }} install -g @angular/cli
 
     - name: Run lint
-      run: ng lint
+      run: bunx ng lint
 
     - name: Build application
-      run: ng build --configuration=production
+      run: bunx ng build --configuration=production
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
@@ -44,7 +49,7 @@ jobs:
         path: dist/
 
   deploy:
-    name: Deploy
+    name: Deploy to GitHub Pages
     needs: build-and-test
     runs-on: ubuntu-latest
     
@@ -55,23 +60,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        cache: 'npm'
-
     - name: Download build artifacts
       uses: actions/download-artifact@v4
       with:
         name: dist
         path: dist/
 
-    # Elige uno de los siguientes métodos de despliegue:
-
-    ### Opción 1: Despliegue en GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist/luhan
+        publish_dir: dist/luhan # Reemplaza con el nombre de tu app
