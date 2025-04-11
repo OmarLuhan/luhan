@@ -37,7 +37,7 @@ jobs:
       run: bun add -g @angular/cli@${{ env.NG_VERSION }}
 
     - name: Build application
-      run: bunx ng build --configuration=production
+      run: bunx ng build --configuration=production --base-href=/luhan/
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
