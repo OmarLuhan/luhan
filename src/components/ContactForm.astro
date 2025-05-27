@@ -1,0 +1,70 @@
+---
+let pending=false;
+let messaje='';
+import { Loader} from '@lucide/astro';
+---
+<div  class=" rounded-lg border bg-[#0a0a0a] text-[#ffffff] shadow-sm p-6">
+  <form class="space-y-4">
+    <div>
+      <label for="name"class="block text-sm font-medium mb-2">
+        Name
+      </label>
+      <input
+        id="name"
+        name="name"
+        placeholder="Ingrese su nombre"
+        class="lex h-10 w-full rounded-md border border-[#282828] 
+        placeholder:text-[#5c5b5b]
+        bg-[#0a0a0a] px-3 py-2 text-base 
+        focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+        required
+      />
+    </div>
+    <div>
+      <label for="email"class="block text-sm font-medium mb-2">
+        Email
+      </label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Ingrese su correo electronico"
+        class="lex h-10 w-full rounded-md border border-[#282828] bg-[#0a0a0a] px-3 py-2 text-base 
+        ring-[#0a0a0a]
+        placeholder:text-[#5c5b5b]
+        disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+        required
+      />
+    </div>
+    <div>
+      <label for="message" class="block text-sm font-medium mb-2">
+        Message
+      </label>
+      <textarea
+        class="flex min-h-[80px] w-full rounded-md border border-[#282828] bg-[#0a0a0a] px-3 py-2 
+         placeholder:text-[#b3b3b3]
+        focus-visible:ring-offset-2 disabled:cursor-not-allowed 
+        disabled:opacity-50 md:text-sm"
+        id="message"
+        name="message"
+        required
+        value="Hola luhan estoy interesado en construir un sistema para mi empresa"
+      ></textarea>
+      <button
+        type="submit"
+        class="w-full h-9 rounded-md px-3 mt-4 bg-[#2b2a2a] text-[#ffffff] hover:bg-[#282828]/80"
+        disabled={pending}
+      >
+        {
+            pending?(<Loader class="h-4 w-4 animate-spin"></Loader>):( <span>Send Message</span>)
+        }
+        
+      </button>
+     {messaje && (
+        <p class="text-sm text-center mt-4 text-muted-foreground">
+            {messaje}
+        </p>
+        )}
+    </div>
+  </form>
+</div>

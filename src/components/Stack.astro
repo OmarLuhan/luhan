@@ -1,0 +1,13 @@
+---
+const {tech}=Astro.props
+---
+  <div class=" rounded-lg border bg-[#0a0a0a] text-[#ffffff] shadow-sm py-6">
+    <h3 class="text-lg font-semibold mb-4 ml-7">{tech.category}</h3>
+    <div class="flex flex-wrap ml-5">
+     {tech.skills.map((skill: unknown)=><span
+        class="inline-flex items-center ml-2 rounded-md bg-[#1e1e1e] px-2 py-1 text-sm font-medium border border-border"
+      >
+        { skill}
+      </span>)}
+    </div>
+</div>

@@ -1,0 +1,151 @@
+---
+import Icon from '../components/Icon.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Layout from '../layouts/Layout.astro';
+import img from '../assets/images/placeholder.svg?url';
+import crisFarma from '../assets/images/crisfarma.png?url';
+import { Github,Linkedin,Twitter,Mail } from '@lucide/astro';
+import Stack from '../components/Stack.astro';
+import ContactForm from '../components/ContactForm.astro';
+const projects=[
+    {
+      title: 'Sistema de administracion',
+      description:
+        'Plataforma de administracion con dotnet 8 y react',
+      image: crisFarma,
+      url:"https://crisfarma.net.pe/",
+      alt:'Plataforma e-commerce',
+      link: 'https://github.com/OmarLuhan/Phamrmacy.git',
+      tags: ['Dotnet', 'React', 'Mysql'],
+    },
+    {
+      title: 'Task Management App',
+      description:
+        'A real-time task management application with team collaboration features.',
+      image: img,
+      alt:'proyecto administrador de proyectos',
+      link: 'https://github.com',
+      tags: ['React', 'Node.js', 'Socket.io'],
+    },
+    {
+      title: 'AI Chat Interface',
+      description:
+        'An AI-powered chat interface with natural language processing capabilities.',
+      image: img,
+      alt:'proyecto chat personal con inteligencia artificial',
+      link: 'https://github.com',
+      tags: ['OpenAI', 'Next.js', 'TailwindCSS'],
+    },
+  ];
+  const technologies=[
+    {
+      category: 'Frontend',
+      skills: [
+        'React',
+        'Astro',
+        'Angular',
+        'TypeScript',
+        'TailwindCSS',
+        'Redux',
+        'GraphQL',
+      ],
+    },
+    {
+      category: 'Backend',
+      skills: [
+        'Dotnet',
+        'Node.js',
+        'Python',
+        'Django',
+        'PostgreSQL',
+        'MySql',
+      ],
+    },
+    {
+      category: 'DevOps',
+      skills: ['Docker', 'Azure', 'CI/CD', 'Git', 'Linux', 'Nginx'],
+    },
+    {
+      category: 'Tools',
+      skills: ['VS Code', 'Postman', 'Figma', 'Rider', 'GitHub', 'Azure apps'],
+    },
+  ];
+---
+<Layout>
+<main class="container px-4 md:px-6">
+    <section id="about" class="py-12 md:py-24 lg:py-32">
+      <div class="container px-4 md:px-6">
+        <div
+          class="flex flex-col items-center justify-center space-y-4 text-center"
+        >
+          <div class="space-y-2">
+            <h1
+              class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
+            >
+              Luhan Tecnology
+            </h1>
+            <p class="mx-auto max-w-[700px] text-gray-500 md:text-xl">
+             Desarrollamos experiencias digitales con tecnologías modernas. 
+             Nos centramos en crear soluciones elegantes para problemas complejos.
+            </p>
+          </div>
+          <div class="space-x-4 text-gray-100">
+			<Icon href="https://github.com/omarluhan" text="GitHub">
+			 <Github class="h-4 w-4"></Github>
+			</Icon>
+			<Icon href="https://linkedin.com" text="LinkedIn">
+			 <Linkedin class="h-4 w-4"></Linkedin>
+			</Icon>
+			<Icon href="https://twitter.com" text="Twitter">
+			 <Twitter class="h-4 w-4"></Twitter>
+			</Icon>
+			<Icon href="mailto:hello@example.com" text="Mail">
+			 <Mail class="h-4 w-4"></Mail>
+			</Icon>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="py-12 md:py-24 lg:py-32">
+      <div class="container px-4 md:px-6">
+        <h2
+          class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center"
+        >
+          Projects
+        </h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <ProjectCard project={projects[0]}></ProjectCard>
+          <ProjectCard project={projects[1]}></ProjectCard>
+          <ProjectCard project={projects[2]}></ProjectCard>
+        </div>
+      </div>
+    </section>
+     <section class="py-12 md:py-24 lg:py-32">
+    <div class="container px-4 md:px-6">
+      <h2
+        class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center"
+      >
+        Tech Stack
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2">
+      <Stack tech={technologies[0]}></Stack>
+      <Stack tech={technologies[1]}></Stack>
+      <Stack tech={technologies[2]}></Stack>
+      <Stack tech={technologies[3]}></Stack>
+      </div>
+    </div>
+  </section>
+   <section id="contact" class="py-12 md:py-24 lg:py-32">
+    <div class="container px-4 md:px-6">
+      <div class="mx-auto max-w-2xl">
+        <h2
+          class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center"
+        >
+          Get in Touch
+        </h2>
+       <ContactForm></ContactForm>
+      </div>
+    </div>
+  </section>
+  </main>
+</Layout>
