@@ -21,28 +21,29 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'  # Usa la versión de Node.js que necesites
+          node-version: '20'
           
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+        # Usamos npm ci para instalación limpia y reproducible
         
-      - name: Build Astro
-        run: npm run build  # Esto ejecuta 'astro build' si está configurado en tu package.json
+      - name: Build Astro project
+        run: npm run build
         
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
         
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'  # Astro genera los archivos estáticos en la carpeta 'dist' por defecto
+          path: './dist'
           
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
