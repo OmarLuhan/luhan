@@ -4,6 +4,8 @@ import ProjectCard from '../components/ProjectCard.astro';
 import Layout from '../layouts/Layout.astro';
 import img from '../assets/images/placeholder.svg?url';
 import crisFarma from '../assets/images/crisfarma.png?url';
+import ecommerce from '../assets/images/ecommerce.png?url';
+import distribt from '../assets/images/distribt.png?url'
 import { Github,Linkedin,Twitter,Mail } from '@lucide/astro';
 import Stack from '../components/Stack.astro';
 import ContactForm from '../components/ContactForm.astro';
@@ -19,22 +21,22 @@ const projects=[
       tags: ['Dotnet', 'React', 'Mysql'],
     },
     {
-      title: 'Task Management App',
+      title: 'E-commerce en tiempo real',
       description:
-        'A real-time task management application with team collaboration features.',
-      image: img,
-      alt:'proyecto administrador de proyectos',
-      link: 'https://github.com',
-      tags: ['React', 'Node.js', 'Socket.io'],
+        'Plataforma de E-commerce en tiempo real',
+      image: ecommerce,
+      alt:'proyecto E-commerce',
+      link: 'https://github.com/OmarLuhan/angular-app.git',
+      tags: ['Angular', 'Dotnet', 'Signalr'],
     },
     {
-      title: 'AI Chat Interface',
+      title: 'Sitema distribuido (avanzado)',
       description:
-        'An AI-powered chat interface with natural language processing capabilities.',
-      image: img,
-      alt:'proyecto chat personal con inteligencia artificial',
-      link: 'https://github.com',
-      tags: ['OpenAI', 'Next.js', 'TailwindCSS'],
+        'Sitema distribuido,comunicacion asincrona entre servidores',
+      image: distribt,
+      alt:'Sitema distribuido',
+      link: 'https://github.com/OmarLuhan/Distribt.git',
+      tags: ['RabbitMQ', 'Dotnet', 'Telemetry'],
     },
   ];
   const technologies=[
