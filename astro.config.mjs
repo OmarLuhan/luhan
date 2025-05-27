@@ -7,8 +7,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  base: "/",
-  build: {
-    assetsPrefix: "/",
-  },
+  base: "/luhan/",
 });
